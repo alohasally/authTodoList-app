@@ -1,4 +1,4 @@
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { styled } from "styled-components";
 import {
   HiOutlineCalendarDays,
@@ -13,7 +13,7 @@ export default function MainNav() {
     gap: 0.8rem;
   `;
 
-  const StyledNavLink = styled.div`
+  const StyledNavLink = styled(NavLink)`
     &:link,
     &:visited {
       display: flex;
@@ -31,7 +31,8 @@ export default function MainNav() {
     &.active:link,
     &.active:visited {
       color: var(--color-grey--800);
-      background-color: var(--color-grey-200);
+      background-color: var(--color-grey-100);
+      border-radius: var(--border-radius-md);
     }
 
     & svg {
@@ -57,13 +58,13 @@ export default function MainNav() {
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/">
+          <StyledNavLink to="/todolist">
             <HiOutlineCalendarDays />
             <span>TodoList</span>
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink>
+          <StyledNavLink to="/user">
             <HiOutlineUser />
             <span>User</span>
           </StyledNavLink>
